@@ -4,11 +4,10 @@
 //
 //  Created by Nafi on 10/1/25.
 //
-
 #include <iostream>
+using namespace std;
 
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
-}
+struct Node{
+    float value;
+};
+

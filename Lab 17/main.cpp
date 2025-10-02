@@ -103,5 +103,18 @@ void deleteList(Node* head){
         current = tmp;
     }
     head = nullptr;
-    
+}
+
+void output(Node * hd){
+    if(!hd){
+        cout << "Empty list.\n";
+        return;
+    }
+    int count = 1;
+    Node * current = hd;
+    while(current){
+        cout << "["<< count++ << "]" << current->value << endl;
+        current = current->next;
+    }
+    cout << endl;
 }

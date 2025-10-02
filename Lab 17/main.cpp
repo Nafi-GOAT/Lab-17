@@ -85,9 +85,16 @@ void deleteNode(Node*& head, int pos) {
     }
 }
 
-void insertNode(Node* head, int pos, float val){
+void insertNode(Node*& head, int pos, float val){
     Node* newNode = new Node;
     newNode->value = val;
+    newNode->next = nullptr;
+    
+    if (pos <= 1 || !head){
+        newNode->next = head;
+        head = newNode;
+        return;
+    }
     
     Node* current = head;
     Node* prev = nullptr;
@@ -101,7 +108,7 @@ void insertNode(Node* head, int pos, float val){
     prev->next = newNode;
 }
  
-void deleteList(Node* head){
+void deleteList(Node*& head){
     Node* current = head;
     while (current){
         Node* tmp = current ->next;

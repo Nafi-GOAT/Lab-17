@@ -63,3 +63,14 @@ void addTail(Node* head, float val){
     temp ->next = newNode;
 }
 
+void deleteNode(Node* head, int pos){
+    if (!head) return;
+    
+    Node* current = head;
+    Node* prev = nullptr;
+    
+    for (int i = 1; i < pos && current; i++){
+        prev = current;
+        current = current ->next;
+    }
+}

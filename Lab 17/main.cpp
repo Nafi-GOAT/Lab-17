@@ -13,11 +13,11 @@ struct Node{
 };
 
 void output(Node *hd);
-void addFront(Node* head, float val);
-void addTail(Node* head, float val);
-void deleteNode(Node *head, int pos);
-void insertNode(Node* head, int pos,float val);
-void deleteList(Node* head);
+void addFront(Node*& head, float val);
+void addTail(Node*& head, float val);
+void deleteNode(Node*& head, int pos);
+void insertNode(Node*& head, int pos,float val);
+void deleteList(Node*& head);
 
 int main(){
     Node *head = nullptr;

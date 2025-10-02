@@ -78,3 +78,16 @@ void deleteNode(Node* head, int pos){
         delete current;
     }
 }
+
+void insertNode(Node* head, int pos, float val){
+    Node* newNode = new Node;
+    newNode->value = val;
+    
+    Node* current = head;
+    Node* prev = nullptr;
+    
+    for (int i = 1; i<pos && current; i++){
+        prev = current;
+        current = current->next;
+    }
+}

@@ -39,14 +39,14 @@ int main(){
     return 0;
 }
 
-void addFront(Node* head, float val){
+void addFront(Node*& head, float val){
     Node* newNode = new Node;
     newNode ->value = val;
     newNode->next = head;
     head = newNode;
 }
 
-void addTail(Node* head, float val){
+void addTail(Node*& head, float val){
     Node* newNode = new Node;
     newNode->value = val;
     newNode->next = nullptr;
@@ -62,18 +62,24 @@ void addTail(Node* head, float val){
     temp->next = newNode;
 }
 
-void deleteNode(Node* head, int pos){
-    if (!head) return;
-    
+void deleteNode(Node*& head, int pos) {
+    if (!head || pos < 1) return;
+
     Node* current = head;
-    Node* prev = nullptr;
-    
-    for (int i = 1; i < pos && current; i++){
-        prev = current;
-        current = current ->next;
+
+    if (pos == 1) {
+        head = head->next;
+        delete current;
+        return;
     }
-    
-    if (prev && current){
+
+    Node* prev = nullptr;
+    for (int i = 1; i < pos && current; i++) {
+        prev = current;
+        current = current->next;
+    }
+
+    if (prev && current) {
         prev->next = current->next;
         delete current;
     }

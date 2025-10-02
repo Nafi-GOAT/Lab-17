@@ -90,4 +90,18 @@ void insertNode(Node* head, int pos, float val){
         prev = current;
         current = current->next;
     }
+    
+    newNode ->next = current;
+    prev->next = newNode;
+}
+ 
+void deleteList(Node* head){
+    Node* current = head;
+    while (current){
+        Node* tmp = current ->next;
+        delete current;
+        current = tmp;
+    }
+    head = nullptr;
+    
 }

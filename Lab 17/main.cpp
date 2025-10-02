@@ -45,3 +45,11 @@ void addFront(Node* head, float val){
     newNode->next = head;
     head = newNode;
 }
+
+void addTail(Node* head, float val){
+    Node* newNode = new Node;
+    newNode ->value = val;
+    newNode->next = nullptr;
+    
+    
+}

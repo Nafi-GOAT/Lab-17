@@ -105,12 +105,12 @@ void insertNode(Node*& head, int pos, float val){
     }
     
     newNode ->next = current;
-    prev->next = newNode;
+    if (prev) prev->next = newNode;
 }
  
 void deleteList(Node*& head){
     Node* current = head;
-    while (current){
+    while (current) {
         Node* tmp = current ->next;
         delete current;
         current = tmp;
@@ -118,7 +118,7 @@ void deleteList(Node*& head){
     head = nullptr;
 }
 
-void output(Node * hd){
+void output(Node *hd){
     if(!hd){
         cout << "Empty list.\n";
         return;

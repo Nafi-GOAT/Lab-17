@@ -5,7 +5,7 @@
 //  Created by Nafi on 10/1/25.
 //
 #include <iostream>
-#include <cstdlib>   // for rand()
+#include <cstdlib>
 using namespace std;
 
 const int SIZE = 7;
@@ -27,10 +27,10 @@ void deleteList(Node*& head);
 int main() {
     Node *head = nullptr;
 
-    // Create a linked list of size SIZE with random numbers 0-99
+    
     for (int i = 0; i < SIZE; i++) {
         int tmp_val = rand() % 100;
-        addFront(head, tmp_val);   // Instead of inline creation, use function
+        addFront(head, tmp_val);
     }
     output(head);
 
@@ -41,7 +41,7 @@ int main() {
     cout << "Choice --> ";
     cin >> entry;
 
-    deleteNode(head, entry);   // Replaced inline deletion with function
+    deleteNode(head, entry);
     output(head);
 
     // Inserting a node
@@ -54,7 +54,7 @@ int main() {
     output(head);
 
     // Deleting the entire linked list
-    deleteList(head);   // Replaced inline while loop with function
+    deleteList(head);
     output(head);
 
     return 0;

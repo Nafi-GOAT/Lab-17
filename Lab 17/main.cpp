@@ -12,7 +12,7 @@ struct Node{
     Node *next;
 };
 
-void output(Node *hd);
+void output(Node *head);
 void addFront(Node*& head, float val);
 void addTail(Node*& head, float val);
 void deleteNode(Node*& head, int pos);
@@ -22,6 +22,43 @@ void deleteList(Node*& head);
 int main(){
     Node *head = nullptr;
     
+    for (int =0; i< SIZE; i++){
+        int tmp_val = rand () % 100;
+        addFront(head, tmp_val);
+    }
+    output(head);
+    
+    cout << "WHICH node to delete? " << endl;
+    output(head);
+    int entry;
+    cout << "Choice __> ";
+    cin >>entry;
+    
+    deleteNode(head, entry);
+    output(head);
+    
+    cout << "After which node to insert 1000?" << endl;
+    output(head);
+    cout <<"Choice--> ";
+    cin>> entry;
+    
+    insertNode(head, entry, 1000);
+    output(head);
+    
+    deleteList(head);
+    output(head);
+    
+    return 0;
+}
+void addFront(Node*& head, float val){
+    Node* newNode = new Node;
+    newNode ->value = val;
+    newNode-> next = head;
+    head = newNode;
+}
+
+void addFront (Node*& head, floar val){
+    Node* new
     addFront(head, 10);
     addFront(head, 20);
     addTail(head, 99);
